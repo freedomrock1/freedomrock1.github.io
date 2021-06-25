@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://localhost:61970/ -->
+<!-- saved from url=(0023)http://localhost:57763/ -->
 <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page - Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="./Dashboard_files/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./Dashboard_files/site.css">
-    <script src="./Dashboard_files/modernizr-2.6.2.js.download"></script>
+    <link rel="stylesheet" type="text/css" href="./index_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./index_files/site.css">
+    <script src="./index_files/modernizr-2.6.2.js.download"></script>
 
 
 </head>
@@ -20,18 +20,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="http://localhost:61970/" class="navbar-brand">Dashboard</a>
+                <a href="http://localhost:57763/" class="navbar-brand">Dashboard</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:61970/home">Home</a></li>
-                    <li><a href="http://localhost:61970/about">About</a></li>
-                    <li><a href="http://localhost:61970/contact">Contact</a></li>
+                    <li><a href="http://localhost:57763/home">Home</a></li>
+                    <li><a href="http://localhost:57763/about">About</a></li>
+                    <li><a href="http://localhost:57763/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <a href="http://localhost:61970/temp"> SCRATCH</a>
+   
     <div class="container-fluid body-content">
         
 
@@ -73,11 +73,6 @@
 </style>
 
 
-<!-- Button to Open the Modal -->
-<button type="button" class="btn btn-primary testButton" data-toggle="modal" data-target="#exampleModalCenter" id="dostuff" data-whatever="stuff.jpg">
-    Open modal
-</button>
-
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
@@ -108,7 +103,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <img src="./Dashboard_files/thechild.jpg" class="img-responsive">
+                <img src="./index_files/thechild.jpg" class="img-responsive">
             </div>
         </div>
     </div>
@@ -136,13 +131,62 @@
     </div>
 </div>
 
+
+<!--image Modal  -->
+<div id="myModalImage" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="./index_files/asset.jpg" class="img-responsive" id="mMIimage">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    tester for images  // done
+    tester for forms
+    tester for passing data
+
+
+ Needed Models
+    Documents that are images
+    Documents that are text
+
+    Acivity
+
+    Opperator notation
+
+    Ticket system
+        support
+        enhancement
+        burn
+
+    -->
+
+
+
 <script type="text/javascript">
-    //$('document').on('click', ".testButton", function (event) {
-    $("#dostuff").on("click", function () {
-        alert("hello");
-        //console.log.
-        document.alert();
-    });
+    function tester() {
+        alert();
+
+    }
+
+    function imgtomodel(value) {
+		value = "index_files/" + value;
+        //value = "/static/images/" + value;
+        document.getElementById("mMIimage").setAttribute("src", value);
+    }
+
+    function valtomodel( value) {
+
+        var model = $("#exampleModalCenter");
+        model.find("input").val(value);
+    }
+
+
+
+
 
 </script>
 
@@ -153,7 +197,7 @@
     <!--Left Column todo
         add info
 
-        add docs to docs
+        add docs to doc buttons
         -->
     <div class="col-md-4 ">
         <div class="border border-dark">
@@ -181,37 +225,37 @@
                 <h4>Documents</h4>
                 <ul style="list-style-type: none;">
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myDocModal" data-loading-text="thechild.jpg">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;thechild.jpg&#39;)">
                             Birth Certificate
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" data-loading-text="thechild.jpg">
-                            Youth
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;YD&#39;)">
+                            Youth Documents
                         </button>
                     </li>
                     <li style="margin:2px">
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" data-loading-text="thechild.jpg">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;CT&#39;)">
                             College Transcripts
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;MC&#39;)">
                             Marriage Certificarte
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;PV&#39;)">
                             Passport / Visas
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;FDD&#39;)">
                             Family
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" data-loading-text="asset.jpg">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;asset.jpg&#39;)">
                             Assets
                         </button>
                     </li>
@@ -240,24 +284,51 @@
             <div class="block">
                 <h4>Alerts</h4>
                 <p>
-                    go 1<br>
-                    go 2<br>
-                    go 3<br>
+                    14:23 20210617 <br>
+                    08:12 20210613 <br>
+                    09:15 20210609 <br>
                 </p>
             </div>
 
             <div class="block">
                 <h4>Planned Activity</h4>
                 <ul>
-                    <li><a class="link" href="http://localhost:61970/">ID</a></li>
-                </ul>
+
+                        <li>
+                            12:00 20210612 !OVERDUE!<br>
+                            <a class="link" href="http://localhost:57763/"></a>
+                        </li>
+                        <li> 18:15 20210708 <br>
+                           <a class="link" href="http://localhost:57763/"></a>
+                        </li>
+                        <li><a class="link" href="http://localhost:57763/"></a></li>
+                        <li><a class="link" href="http://localhost:57763/"></a></li>
+</ul>
             </div>
         </div>
 
         <div class="block">
             <h4>Mission Milstones</h4>
             <ul>
-                <li>ID</li>
+                <li>
+                    09:00 20210705 | BUSINESS CONNECTION
+                    [1] SuperBets now linked to Games Unlimited over the
+                    sale of gambling-industry gaming services
+                    [2] SuperBets has known linkage to Mace <target>
+
+                        10:00 20210701 | PERSONA CONNECTION
+                        Lucas introduced to Abby
+
+                        14:00 20210605 | PERSONA CONNECTION
+                        John connects to Mace <target>
+
+                            04:00 20210510 | INFRASTRUCTURE
+                            Games Unlimited created by Lucas
+
+                            00:01 20210501 | EAP CREATION
+                            [1] Lucas goes live
+                            [2] Doug and John goes live; linked to Lucas
+                </target></target></li>
             </ul>
 
         </div>
@@ -302,7 +373,7 @@
                 </tr>
                 <tr>
                     <td style="width:150px">
-                        <img src="http://localhost:61970/" width="150" height="200">
+                        <img src="http://localhost:57763/" width="150" height="200">
                     </td>
                     <td>
                         <select>
@@ -371,16 +442,22 @@
     </div>
 </div>
 
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary testButton" data-toggle="modal" data-target="#exampleModalCenter" id="dostuff" data-whatever="stuff.jpg" onclick="">
+    Open modal
+</button>
+
+
 
         <hr>
         <footer>
             <p>© 2021 - CHF</p>
         </footer>  
-
-    <script src="./Dashboard_files/jquery-3.6.0.min.js.download"></script>
-    <script src="./Dashboard_files/bootstrap.min.js.download"></script>
-    <script src="./Dashboard_files/respond.js.download"></script>
+    </div>
+    <script src="./index_files/jquery-3.6.0.min.js.download"></script>
+    <script src="./index_files/bootstrap.min.js.download"></script>
+    <script src="./index_files/respond.js.download"></script>
     
 
 
-</div></body></html>
+</body></html>
