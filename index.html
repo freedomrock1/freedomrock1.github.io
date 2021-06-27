@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://localhost:57763/ -->
+<!-- saved from url=(0023)http://localhost:50363/ -->
 <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +20,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="http://localhost:57763/" class="navbar-brand">Dashboard</a>
+                <a href="http://localhost:50363/" class="navbar-brand">Dashboard</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:57763/home">Home</a></li>
-                    <li><a href="http://localhost:57763/about">About</a></li>
-                    <li><a href="http://localhost:57763/contact">Contact</a></li>
+                    <li><a href="http://localhost:50363/home">Home</a></li>
+                    <li><a href="http://localhost:50363/about">About</a></li>
+                    <li><a href="http://localhost:50363/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -133,24 +133,24 @@
 
 
 <!--image Modal  -->
-<div id="myModalImage" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
+<div id="myModalImage" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <img src="./index_files/asset.jpg" class="img-responsive" id="mMIimage">
+                <img src="./index_files/saved_resource" class="img-responsive" id="mMIimage">
             </div>
         </div>
     </div>
 </div>
 
-<!--
+<!--  MODALS
     tester for images  // done
     tester for forms
     tester for passing data
 
 
  Needed Models
-    Documents that are images
+    Documents that are images // done
     Documents that are text
 
     Acivity
@@ -173,8 +173,7 @@
     }
 
     function imgtomodel(value) {
-		value = "index_files/" + value;
-        //value = "/static/images/" + value;
+        value = "./index_files/" + value;
         document.getElementById("mMIimage").setAttribute("src", value);
     }
 
@@ -184,9 +183,16 @@
         model.find("input").val(value);
     }
 
-
-
-
+    function graphImage() {
+        var c = document.getElementById("can");
+        var ctx = c.getContext("2d");
+        var image = new Image(200,90);
+        image.src = "./index_files/networkGraph.png";
+        //image.drawImage()
+        
+        ctx.drawImage(image, 0, 0);
+        
+    }
 
 </script>
 
@@ -195,9 +201,7 @@
 <div class="row">
     <!--Left Column-->
     <!--Left Column todo
-        add info
-
-        add docs to doc buttons
+        make tool kit functional
         -->
     <div class="col-md-4 ">
         <div class="border border-dark">
@@ -207,64 +211,94 @@
                 Conncetion:  IP : Location
             </span>
             <span class="border border-primary">
-                Persona Length of Time Acitive:<span id=""> </span> <br>
-                Historical Identifiers: <span id=""></span><br>
-                Famial Affiliatins:  <span id=""></span><br>
-                Affiliations (Known): <span id=""></span><br>
+                Persona Length of Time Acitive:<span id=""> 10000</span> <br>
+                Historical Identifiers: <span id="">Blue</span><br>
+                Physical Identifiers: <span id="">tattoo</span><br>
+                Famial Affiliatins:  <span id="">deceased</span><br>
+                Affiliations (Known): <span id="">Kiwanis Club</span><br>
                 Affiliations (Hidden): <span id=""></span><br>
-                Current Assessed Risk: <span id=""></span><br>
-
-
-
+                Current Assessed Risk: <span id="">low</span><br>
             </span>
         </div>
+        <div class="block">
+            <div class="row">
+                <div class="col-md-4 " style="">
+                    <div style="background-color:darkslategrey;color:white;height:100%;vertical-align:middle">
+                        <h3>Toolkit</h3>
+                    </div>
 
+                </div>
+                <div class="col-md-8 ">
+
+                    <h6>Social Media</h6>
+                    Facebook (link); Twitter (link); LinkedIn (link)
+                    <h6>Financial</h6>
+                    JPM-CC | 4916122695171931 | 10/27 | 881 <br>
+                    WF-DEBIT | 4919228134272121| 11/23 | 429 <br>
+                    AMX-CC | 2003817372631823 | 08/25 | 2781 <br>
+                    <h6>Travel</h6>
+                    Delta (link); Uber (link); Lyft (link); Hyatt (link)
+
+                </div>
+
+            </div>
+        </div>
+        <!-- EAP Documents-->
         <div class="border border-info" id="docs">
-
+             
             <div class=" border border-info" style="background-color:cadetblue; color:white">
                 <h4>Documents</h4>
                 <ul style="list-style-type: none;">
                     <li>
                         <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;thechild.jpg&#39;)">
+                            Identification
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;&#39;)">
                             Birth Certificate
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;YD&#39;)">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;unnamed.jpg&#39;)">
                             Youth Documents
                         </button>
                     </li>
                     <li style="margin:2px">
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;CT&#39;)">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;&#39;)">
                             College Transcripts
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;MC&#39;)">
-                            Marriage Certificarte
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;unnamed.jpg&#39;)">
+                            Government Documents
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;PV&#39;)">
-                            Passport / Visas
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;unnamed.jpg&#39;)">
+                            Travel Documents
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;FDD&#39;)">
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;Cobbler-Image.jpg&#39;)">
                             Family
                         </button>
                     </li>
                     <li>
                         <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;asset.jpg&#39;)">
-                            Assets
+                            Finanical / Assets / Bills
                         </button>
                     </li>
-
-                    <!--<li>
-                        <button type="button" class="btn btn-outline-primary btn-sm " style="background-color:black" data-toggle="modal" data-target="#exampleModalCenter">
-                            Launch demo modal
+                    <li>
+                        <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#myModalImage" onclick="imgtomodel(&#39;unnamed.jpg&#39;)">
+                            Medical
                         </button>
-                    </li>-->
+                    </li>
+                    <!--<li>
+        <button type="button" class="btn btn-outline-primary btn-sm " style="background-color:black" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch demo modal
+        </button>
+    </li>-->
 
                 </ul>
             </div>
@@ -296,13 +330,13 @@
 
                         <li>
                             12:00 20210612 !OVERDUE!<br>
-                            <a class="link" href="http://localhost:57763/"></a>
+                            <a class="link" href="http://localhost:50363/"></a>
                         </li>
                         <li> 18:15 20210708 <br>
-                           <a class="link" href="http://localhost:57763/"></a>
+                           <a class="link" href="http://localhost:50363/"></a>
                         </li>
-                        <li><a class="link" href="http://localhost:57763/"></a></li>
-                        <li><a class="link" href="http://localhost:57763/"></a></li>
+                        <li><a class="link" href="http://localhost:50363/"></a></li>
+                        <li><a class="link" href="http://localhost:50363/"></a></li>
 </ul>
             </div>
         </div>
@@ -334,24 +368,37 @@
         </div>
         <div class="block">
             <h5> Operator Notations</h5>
+            <ul>
+                <li>
+                    15:00 20210710 Mace has stopped using social media over the last two weeks; irregular break from usual activity. Agrees with previous social media post made last week about a business travel trip to JAPAN
+                        
 
+
+            </li></ul>
         </div>
 
 
     </div>
 
     <!-- Right column todos:
-        Add eap info
-        Add a picture
-        Make select work
 
-        Add canvas
+        Add eap info  // done
+        Add a picture // done
+
+        Make select work  
+
+        Add canvas             // done
         Add pic to canvas
         add JS to canvas
 
-        add docs to Mission docs
+        Mission docs
+            create sample docs
+            add ref to docs
 
         Do the TRS
+            add ref to modals // done
+            write models 
+               
         -->
     <!-- Right column -->
     <div class="col-md-4">
@@ -364,7 +411,7 @@
 
                 <tbody><tr style="background-color:cornflowerblue; color:white">
                     <td>EAP: </td>
-                    <td>[Persona In Use]</td>
+                    <td>[Persona In Use]<span id=""> </span></td>
                 </tr>
                 <tr style="background-color:cornflowerblue; color:white">
                     <td>Mission: </td>
@@ -373,7 +420,7 @@
                 </tr>
                 <tr>
                     <td style="width:150px">
-                        <img src="http://localhost:57763/" width="150" height="200">
+                        <img src="./index_files/child.jpg" width="150" height="200">
                     </td>
                     <td>
                         <select>
@@ -385,13 +432,13 @@
                         </select><br>
 
 
-                        Birth Data:<br>
-                        Birth Place:<br>
-                        SSN:<br>
-                        Occupation:<br>
-                        Languages:<br>
+                        Birth Data:<span id=""> 0</span><br>
+                        Birth Place:<span id=""> ny, ny</span><br>
+                        SSN:<span id=""> 8675309</span><br>
+                        Occupation:<span id=""> Worker</span><br>
+                        Languages:<span id=""> English, Spanglish, Esparonto</span><br>
                         <hr>
-                        Summary
+                        Summary: <br><span id=""> Pretty fly for a green guy</span>
 
                     </td>
                 </tr>
@@ -405,27 +452,27 @@
 
         <div class="block">
             <div class="block">
-                <h5>Network</h5>
+                <h5 onclick="graphImage()">Network</h5>
             </div>
             <div class="block">
-                A GRAPH
+                <canvas id="can" with="100%" height="200">A GRAPH</canvas>
             </div>
         </div>
         <div class="block" style="background-color:cadetblue; color:white">
             <h4>Mission Docs</h4>
             <ul style="list-style-type: none;">
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Mission Objectives&#39;)">
                         Mission Objectives
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Targets&#39;)">
                         Targets / persons of Interest
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Affiliated&#39;)">
                         Affiliated Personas / Organizations
                     </button>
                 </li>
@@ -434,9 +481,15 @@
         <div class="block" style="background-color:cornflowerblue; color:white">
             <h5>Ticket Requesting System</h5>
             <span class="" style="align-content:flex-end">
-                <button class="btn btn-primary">Support</button>
-                <button class="btn btn-primary" href="">Enhancement</button>
-                <button class="btn btn-danger">Burn</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Support&#39;)">
+                    Support
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Enhancement&#39;)">
+                    Enhancement
+                </button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Burn&#39;)">
+                    Burn
+                </button>
             </span>
         </div>
     </div>
