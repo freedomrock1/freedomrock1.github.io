@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://localhost:54852/ -->
+<!-- saved from url=(0023)http://localhost:53259/ -->
 <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +20,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="http://localhost:54852/" class="navbar-brand">Dashboard</a>
+                <a href="http://localhost:53259/" class="navbar-brand">Dashboard</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:54852/home">Home</a></li>
-                    <li><a href="http://localhost:54852/about">About</a></li>
-                    <li><a href="http://localhost:54852/contact">Contact</a></li>
+                    <li><a href="http://localhost:53259/home">Home</a></li>
+                    <li><a href="http://localhost:53259/about">About</a></li>
+                    <li><a href="http://localhost:53259/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -133,7 +133,7 @@
 
 
 <!--image Modal  -->
-<div id="myModalImage" class="modal fade" tabindex="-1" role="dialog">
+<div id="myModalImage" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -309,20 +309,20 @@
     <!--Middle column todo:
         create vars     // done
         populate vars   // done
-        inject vars      
+        inject vars     // done 
 
         scroll alerts
-        add activities  
+        add activities  // done
         make them interactive
-        add milestones 
+        add milestones  // done
         make insertable
-        add notations  
+        add notations   // done
         make interactive
         -->
     <div class="col-md-4">
         <div class="block">
 
-            <div class="block">
+            <div class="block" id="alerts">
                 <h4>Alerts</h4>
                 
                 14:23 20210617 | SOCIAL MEDIA/FB – Interest Type Post   <br>
@@ -334,20 +334,25 @@
 
             </div>
 
-            <div class="block">
+            <div class="block" id="activities">
                 <h4>Planned Activity</h4>
                 <ul>
 
                     
                     <li>
-                        12:00 20210612 !OVERDUE! 
- [MANUAL] Contact Persona4 regarding business deal. 
+                        12:00 20210612 !OVERDUE!<br>
+                        
+                            [MANUAL] Contact Persona4 regarding business deal.  <br>
+                        
                     </li>
                     
                     <li>
-                        18:15 20210708 
- [AUTO] SOCIAL MEDIA/FB – Post on Persona3 About &lt;Topic&gt; 
- [AUTO] SOCIAL MEDIA/TW – Interest Type Post
+                        18:15 20210708<br>
+                        
+                            [AUTO] SOCIAL MEDIA/FB – Post on Persona3 About &lt;Topic&gt;  <br>
+                        
+                            [AUTO] SOCIAL MEDIA/TW – Interest Type Post <br>
+                        
                     </li>
                     
 
@@ -355,44 +360,55 @@
             </div>
         </div>
 
-        <div class="block">
+        <div class="block" id="milestones">
             <h4>Mission Milstones</h4>
             <ul>
 
                 
                 <li>
-                    09:00 20210705 | BUSINESS CONNECTION 
- [1] SuperBets now linked to Games Unlimited over the     
-  sale of gambling-industry gaming services 
- [2] SuperBets has known linkage to Mace &lt;TARGET&gt;
+                    09:00 20210705 | BUSINESS CONNECTION<br>
+                    
+                         [1] SuperBets now linked to Games Unlimited over the sale of gambling-industry gaming services <br>
+                    
+                        [2] SuperBets has known linkage to Mace &lt;TARGET&gt; <br>
+                    
                 </li>
                 
                 <li>
-                    10:00 20210701 | PERSONA CONNECTION  
-   Lucas introduced to Abby
+                    10:00 20210701 | PERSONA CONNECTION <br>
+                    
+                         Lucas introduced to Abby <br>
+                    
                 </li>
                 
                 <li>
-                    14:00 20210605 | PERSONA CONNECTION  
-   John connects to Mace &lt;TARGET&gt;
+                    14:00 20210605 | PERSONA CONNECTION <br>
+                    
+                         John connects to Mace &lt;TARGET&gt; <br>
+                    
                 </li>
                 
                 <li>
-                    04:00 20210510 | INFRASTRUCTURE  
-   Games Unlimited created by Lucas
+                    04:00 20210510 | INFRASTRUCTURE<br>
+                    
+                        Games Unlimited created by Lucas <br>
+                    
                 </li>
                 
                 <li>
-                    00:01 20210501 | EAP CREATION  
-   [1] Lucas goes live  
-   [2] Doug and John goes live; linked to Lucas
+                    00:01 20210501 | EAP CREATION <br>
+                    
+                        [1] Lucas goes live <br>
+                    
+                        [2] Doug and John goes live; linked to Lucas <br>
+                    
                 </li>
                 
 
             </ul>
 
         </div>
-        <div class="block">
+        <div class="block" id="notations">
             <h5> Operator Notations</h5>
             <ul>
 
@@ -568,7 +584,7 @@
         </div>
     </div>
 </div>
-<div class="modal" id="trsEnhancement" aria-hidden="true" style="display: none;">
+<div class="modal" id="trsEnhancement">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
@@ -596,7 +612,7 @@
         </div>
     </div>
 </div>
-<div class="modal" id="trsBurn" aria-hidden="true" style="display: none;">
+<div class="modal" id="trsBurn">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
