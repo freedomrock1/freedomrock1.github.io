@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://localhost:50363/ -->
+<!-- saved from url=(0023)http://localhost:54852/ -->
 <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +20,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="http://localhost:50363/" class="navbar-brand">Dashboard</a>
+                <a href="http://localhost:54852/" class="navbar-brand">Dashboard</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:50363/home">Home</a></li>
-                    <li><a href="http://localhost:50363/about">About</a></li>
-                    <li><a href="http://localhost:50363/contact">Contact</a></li>
+                    <li><a href="http://localhost:54852/home">Home</a></li>
+                    <li><a href="http://localhost:54852/about">About</a></li>
+                    <li><a href="http://localhost:54852/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -173,11 +173,11 @@
     }
 
     function imgtomodel(value) {
-        value = "./index_files/" + value;
+        value = "index_files/" + value;
         document.getElementById("mMIimage").setAttribute("src", value);
     }
 
-    function valtomodel( value) {
+    function valtomodel(value) {
 
         var model = $("#exampleModalCenter");
         model.find("input").val(value);
@@ -186,12 +186,12 @@
     function graphImage() {
         var c = document.getElementById("can");
         var ctx = c.getContext("2d");
-        var image = new Image(200,90);
-        image.src = "./index_files/networkGraph.png";
+        var image = new Image(200, 90);
+        image.src = "index_files/networkGraph.png";
         //image.drawImage()
-        
+
         ctx.drawImage(image, 0, 0);
-        
+
     }
 
 </script>
@@ -245,7 +245,7 @@
         </div>
         <!-- EAP Documents-->
         <div class="border border-info" id="docs">
-             
+
             <div class=" border border-info" style="background-color:cadetblue; color:white">
                 <h4>Documents</h4>
                 <ul style="list-style-type: none;">
@@ -295,10 +295,10 @@
                         </button>
                     </li>
                     <!--<li>
-        <button type="button" class="btn btn-outline-primary btn-sm " style="background-color:black" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo modal
-        </button>
-    </li>-->
+                        <button type="button" class="btn btn-outline-primary btn-sm " style="background-color:black" data-toggle="modal" data-target="#exampleModalCenter">
+                            Launch demo modal
+                        </button>
+                    </li>-->
 
                 </ul>
             </div>
@@ -306,75 +306,113 @@
         </div>
 
     </div>
-    <!-- Middle column todo:
-              scroll alerts
-        add activities and make them interactive
-        add milestones and make insertable
-        add notations and make interactive
+    <!--Middle column todo:
+        create vars     // done
+        populate vars   // done
+        inject vars      
+
+        scroll alerts
+        add activities  
+        make them interactive
+        add milestones 
+        make insertable
+        add notations  
+        make interactive
         -->
     <div class="col-md-4">
         <div class="block">
 
             <div class="block">
                 <h4>Alerts</h4>
-                <p>
-                    14:23 20210617 <br>
-                    08:12 20210613 <br>
-                    09:15 20210609 <br>
-                </p>
+                
+                14:23 20210617 | SOCIAL MEDIA/FB – Interest Type Post   <br>
+                
+                08:12 20210613 | SOCIAL MEDIA/TW – Interest Type Post   <br>
+                
+                09:15 20210609 | PURCHASE/BestBuy – Interest Type Sale   <br>
+                
+
             </div>
 
             <div class="block">
                 <h4>Planned Activity</h4>
                 <ul>
 
-                        <li>
-                            12:00 20210612 !OVERDUE!<br>
-                            <a class="link" href="http://localhost:50363/"></a>
-                        </li>
-                        <li> 18:15 20210708 <br>
-                           <a class="link" href="http://localhost:50363/"></a>
-                        </li>
-                        <li><a class="link" href="http://localhost:50363/"></a></li>
-                        <li><a class="link" href="http://localhost:50363/"></a></li>
-</ul>
+                    
+                    <li>
+                        12:00 20210612 !OVERDUE! 
+ [MANUAL] Contact Persona4 regarding business deal. 
+                    </li>
+                    
+                    <li>
+                        18:15 20210708 
+ [AUTO] SOCIAL MEDIA/FB – Post on Persona3 About &lt;Topic&gt; 
+ [AUTO] SOCIAL MEDIA/TW – Interest Type Post
+                    </li>
+                    
+
+                </ul>
             </div>
         </div>
 
         <div class="block">
             <h4>Mission Milstones</h4>
             <ul>
+
+                
                 <li>
-                    09:00 20210705 | BUSINESS CONNECTION
-                    [1] SuperBets now linked to Games Unlimited over the
-                    sale of gambling-industry gaming services
-                    [2] SuperBets has known linkage to Mace <target>
+                    09:00 20210705 | BUSINESS CONNECTION 
+ [1] SuperBets now linked to Games Unlimited over the     
+  sale of gambling-industry gaming services 
+ [2] SuperBets has known linkage to Mace &lt;TARGET&gt;
+                </li>
+                
+                <li>
+                    10:00 20210701 | PERSONA CONNECTION  
+   Lucas introduced to Abby
+                </li>
+                
+                <li>
+                    14:00 20210605 | PERSONA CONNECTION  
+   John connects to Mace &lt;TARGET&gt;
+                </li>
+                
+                <li>
+                    04:00 20210510 | INFRASTRUCTURE  
+   Games Unlimited created by Lucas
+                </li>
+                
+                <li>
+                    00:01 20210501 | EAP CREATION  
+   [1] Lucas goes live  
+   [2] Doug and John goes live; linked to Lucas
+                </li>
+                
 
-                        10:00 20210701 | PERSONA CONNECTION
-                        Lucas introduced to Abby
-
-                        14:00 20210605 | PERSONA CONNECTION
-                        John connects to Mace <target>
-
-                            04:00 20210510 | INFRASTRUCTURE
-                            Games Unlimited created by Lucas
-
-                            00:01 20210501 | EAP CREATION
-                            [1] Lucas goes live
-                            [2] Doug and John goes live; linked to Lucas
-                </target></target></li>
             </ul>
 
         </div>
         <div class="block">
             <h5> Operator Notations</h5>
             <ul>
+
+                
                 <li>
-                    15:00 20210710 Mace has stopped using social media over the last two weeks; irregular break from usual activity. Agrees with previous social media post made last week about a business travel trip to JAPAN
-                        
-
-
-            </li></ul>
+                    15:00 20210710 Mace has stopped using social media over the last two weeks; irregular break from usual activity. Agrees with previous social media post made last week about a business travel trip to &lt;Japan&gt;.
+   - Information derived from manual observation of Mace’s social media 
+                </li>
+                
+                <li>
+                    13:15 20210630 Mace expressed desire to engage in &lt;sports betting&gt;
+  - Information derived from communication with Lucas
+                </li>
+                
+                <li>
+                    11:00 20210615 Mace exhibited interest in &lt;Cleveland Browns&gt;
+  - Information derived from social media post (FB)
+                </li>
+                
+            </ul>
         </div>
 
 
@@ -385,10 +423,10 @@
         Add eap info  // done
         Add a picture // done
 
-        Make select work  
+        Make select work
 
         Add canvas             // done
-        Add pic to canvas
+        Add pic to canvas      // done
         add JS to canvas
 
         Mission docs
@@ -397,8 +435,8 @@
 
         Do the TRS
             add ref to modals // done
-            write models 
-               
+            write models
+
         -->
     <!-- Right column -->
     <div class="col-md-4">
@@ -449,7 +487,7 @@
 
 
 
-
+        <!--    the network graph   -->
         <div class="block">
             <div class="block">
                 <h5 onclick="graphImage()">Network</h5>
@@ -458,6 +496,8 @@
                 <canvas id="can" with="100%" height="200">A GRAPH</canvas>
             </div>
         </div>
+
+        <!-- mission documents -->
         <div class="block" style="background-color:cadetblue; color:white">
             <h4>Mission Docs</h4>
             <ul style="list-style-type: none;">
@@ -481,13 +521,13 @@
         <div class="block" style="background-color:cornflowerblue; color:white">
             <h5>Ticket Requesting System</h5>
             <span class="" style="align-content:flex-end">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Support&#39;)">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trsSupport" onclick="valtomodel(&#39;Support&#39;)">
                     Support
                 </button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Enhancement&#39;)">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trsEnhancement" onclick="valtomodel(&#39;Enhancement&#39;)">
                     Enhancement
                 </button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Burn&#39;)">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#trsBurn" onclick="valtomodel(&#39;Burn&#39;)">
                     Burn
                 </button>
             </span>
@@ -499,7 +539,91 @@
 <button type="button" class="btn btn-primary testButton" data-toggle="modal" data-target="#exampleModalCenter" id="dostuff" data-whatever="stuff.jpg" onclick="">
     Open modal
 </button>
+<!-- The Ticket System Modals -->
+<div class="modal" id="trsSupport" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
 
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Support Request</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    Modal body..<br>
+                    <textarea id="taSupport" name="text" rows="4" cols="50">          
+                    </textarea>
+                    <br>
+                    <button>mybutton</button>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="trsEnhancement" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Enhancment Request</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    Modal body..<br>
+                    <textarea id="taSupport" name="text" rows="4" cols="50">          
+                    </textarea>
+                    <br>
+                    <button>mybutton</button>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="trsBurn" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Burn Request</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    Modal body..<br>
+                    <textarea id="taSupport" name="text" rows="4" cols="50">          
+                    </textarea>
+                    <br>
+                    <button>mybutton</button>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
         <hr>
