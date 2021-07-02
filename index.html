@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://localhost:53259/ -->
+<!-- saved from url=(0023)http://localhost:51157/ -->
 <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.1018.0" data-gr-ext-installed="" class="" style="">
+<body data-new-gr-c-s-check-loaded="14.1018.0" data-gr-ext-installed="">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -20,13 +20,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="http://localhost:53259/" class="navbar-brand">Dashboard</a>
+                <a href="http://localhost:51157/" class="navbar-brand">Dashboard</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="http://localhost:53259/home">Home</a></li>
-                    <li><a href="http://localhost:53259/about">About</a></li>
-                    <li><a href="http://localhost:53259/contact">Contact</a></li>
+                    <li><a href="http://localhost:51157/home">Home</a></li>
+                    <li><a href="http://localhost:51157/about">About</a></li>
+                    <li><a href="http://localhost:51157/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -110,7 +110,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -133,7 +133,7 @@
 
 
 <!--image Modal  -->
-<div id="myModalImage" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
+<div id="myModalImage" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -163,7 +163,66 @@
         burn
 
     -->
+<script type="text/javascript">
+// pull fields into json
+    function getNotation() {
+        var n = {};
+        var t=document.getElementById('noteText').value;
+        var tt=document.getElementById('noteTime').value;
+        n['text'] = t;
+        n['time'] = tt;
 
+        return n;
+    }
+
+// inster json into doc
+    function intertNotation() {
+        var notes = document.getElementById("noteList");
+        //let aBlock = document.createElement('block').appendChild(document.createElement('li'));
+        var li = document.createElement("li");
+        var m = getNotation();
+        var message = m['time'] + " - " + m['text'];
+        li.appendChild(document.createTextNode(message));
+        first = notes.firstChild;
+        notes.appendChild(li);
+        notes.insertBefore(li, first);
+    }
+
+</script>
+<!-- notation Modal -->
+<div class="modal fade" id="modalNewNotation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">New Notation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    <br class="Apple-interchange-newline">
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--
+                todo
+                    add fields
+                        fix time
+                    js to pull fields
+                    js to put fields into json
+                    js to insert json into doc
+
+                        fields: time note
+                    -->
+                <input type="datetime-local" name="notetime" id="noteTime"><br>
+                <textarea rows="7" columns="75" name="" id="noteText"></textarea>
+                <input type="hidden" name="" id="" value="x">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="intertNotation()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script type="text/javascript">
@@ -309,15 +368,25 @@
     <!--Middle column todo:
         create vars     // done
         populate vars   // done
-        inject vars     // done 
+        inject vars     // done
 
         scroll alerts
+
         add activities  // done
-        make them interactive
+        make acts interactive
+            add button
+            delete from old
+            insert to new
+
         add milestones  // done
-        make insertable
+        make milestones insertable
+
         add notations   // done
-        make interactive
+        make notations interactive
+            add <button>// done</button>
+            create modal
+            js to pull info
+            insert new info
         -->
     <div class="col-md-4">
         <div class="block">
@@ -340,19 +409,27 @@
 
                     
                     <li>
-                        12:00 20210612 !OVERDUE!<br>
-                        
+                        <a href="http://localhost:51157/#bannerformmodal" data-toggle="modal" data-target="#bannerformmodal">
+                            Load me
+
+                            12:00 20210612 !OVERDUE!<br>
+                            
                             [MANUAL] Contact Persona4 regarding business deal.  <br>
-                        
+                            
+                        </a>
                     </li>
                     
                     <li>
-                        18:15 20210708<br>
-                        
+                        <a href="http://localhost:51157/#bannerformmodal" data-toggle="modal" data-target="#bannerformmodal">
+                            Load me
+
+                            18:15 20210708<br>
+                            
                             [AUTO] SOCIAL MEDIA/FB – Post on Persona3 About &lt;Topic&gt;  <br>
-                        
+                            
                             [AUTO] SOCIAL MEDIA/TW – Interest Type Post <br>
-                        
+                            
+                        </a>
                     </li>
                     
 
@@ -368,39 +445,39 @@
                 <li>
                     09:00 20210705 | BUSINESS CONNECTION<br>
                     
-                         [1] SuperBets now linked to Games Unlimited over the sale of gambling-industry gaming services <br>
+                     [1] SuperBets now linked to Games Unlimited over the sale of gambling-industry gaming services <br>
                     
-                        [2] SuperBets has known linkage to Mace &lt;TARGET&gt; <br>
+                    [2] SuperBets has known linkage to Mace &lt;TARGET&gt; <br>
                     
                 </li>
                 
                 <li>
                     10:00 20210701 | PERSONA CONNECTION <br>
                     
-                         Lucas introduced to Abby <br>
+                     Lucas introduced to Abby <br>
                     
                 </li>
                 
                 <li>
                     14:00 20210605 | PERSONA CONNECTION <br>
                     
-                         John connects to Mace &lt;TARGET&gt; <br>
+                     John connects to Mace &lt;TARGET&gt; <br>
                     
                 </li>
                 
                 <li>
                     04:00 20210510 | INFRASTRUCTURE<br>
                     
-                        Games Unlimited created by Lucas <br>
+                    Games Unlimited created by Lucas <br>
                     
                 </li>
                 
                 <li>
                     00:01 20210501 | EAP CREATION <br>
                     
-                        [1] Lucas goes live <br>
+                    [1] Lucas goes live <br>
                     
-                        [2] Doug and John goes live; linked to Lucas <br>
+                    [2] Doug and John goes live; linked to Lucas <br>
                     
                 </li>
                 
@@ -410,7 +487,7 @@
         </div>
         <div class="block" id="notations">
             <h5> Operator Notations</h5>
-            <ul>
+            <ul id="noteList">
 
                 
                 <li>
@@ -429,6 +506,7 @@
                 </li>
                 
             </ul>
+            <button type="button" class="" data-toggle="modal" data-target="#modalNewNotation">Add Notation</button>
         </div>
 
 
@@ -556,7 +634,7 @@
     Open modal
 </button>
 <!-- The Ticket System Modals -->
-<div class="modal" id="trsSupport" aria-hidden="true" style="display: none;">
+<div class="modal" id="trsSupport">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
