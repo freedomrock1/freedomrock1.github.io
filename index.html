@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)http://localhost:55094/ -->
+<!-- saved from url=(0023)http://localhost:62791/ -->
 <html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,19 +113,19 @@
     </div>
 </div>
 
-<!-- Modal with image-->
-<div id="myDocModal" class="modal fade" tabindex="-1" role="dialog">
+<!-- Modal with image documents-->
+<div id="modDocImage" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <img src="./index_files/thechild.jpg" class="img-responsive">
+                <img src="./index_files/targets001.png" class="img-responsive" id="modMissionImage">
             </div>
         </div>
     </div>
 </div>
 
 <!-- example Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -325,6 +325,11 @@
         document.getElementById("mMIimage").setAttribute("src", value);
     }
 
+    function imgtodocmodel(value) {
+        value = "index_files/" + value;
+        document.getElementById("modMissionImage").setAttribute("src", value);
+    }
+
     function valtomodel(value) {
 
         var model = $("#exampleModalCenter");
@@ -357,11 +362,7 @@
         them.insertBefore(li, first);
 
 
-
-
         mod = document.getElementById("modActivity");
-
-
 
     }
 
@@ -529,7 +530,7 @@
 
                     
                     <li id="act1">
-                        <a href="http://localhost:55094/#bannerformmodal" data-toggle="modal" data-target="#modActivity" onclick="activity(&quot;act1&quot;)">
+                        <a href="http://localhost:62791/#bannerformmodal" data-toggle="modal" data-target="#modActivity" onclick="activity(&quot;act1&quot;)">
 
 
                             20210612 12:00  !OVERDUE!<br>
@@ -540,7 +541,7 @@
                     </li>
                     
                     <li id="act2">
-                        <a href="http://localhost:55094/#bannerformmodal" data-toggle="modal" data-target="#modActivity" onclick="activity(&quot;act2&quot;)">
+                        <a href="http://localhost:62791/#bannerformmodal" data-toggle="modal" data-target="#modActivity" onclick="activity(&quot;act2&quot;)">
 
 
                             20210708 18:15 <br>
@@ -662,7 +663,7 @@
         add JS to canvas        //done 
 
         Mission docs
-            create sample docs
+            create sample docs //done
             add ref to docs
 
         -->
@@ -732,17 +733,17 @@
             <h4>Mission Docs</h4>
             <ul style="list-style-type: none;color:white">
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Mission Objectives&#39;)">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modDocImage" onclick="imgtodocmodel(&#39;missions/mo001.png&#39;)">
                         Mission Objectives
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Targets&#39;)">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modDocImage" onclick="imgtodocmodel(&#39;missions/targets001.png&#39;)">
                         Targets / persons of Interest
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="valtomodel(&#39;Affiliated&#39;)">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modDocImage" onclick="imgtodocmodel(&#39;missions/mo001.png&#39;)">
                         Affiliated Personas / Organizations
                     </button>
                 </li>
